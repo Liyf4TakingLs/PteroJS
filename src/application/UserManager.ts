@@ -50,12 +50,12 @@ export class UserManager extends BaseManager {
                 const s = new User(this.client, o.attributes);
                 res.set(s.id, s);
             }
-            if (this.client.options.servers.cache) this.cache = this.cache.join(res);
+            if (this.client.options.users.cache) this.cache = this.cache.join(res);
             return res;
         }
 
         const u = new User(this.client, data.attributes);
-        if (this.client.options.servers.cache) this.cache.set(u.id, u);
+        if (this.client.options.users.cache) this.cache.set(u.id, u);
         return u;
     }
 
