@@ -47,7 +47,7 @@ export class NestManager extends BaseManager {
         const n = caseConv.toCamelCase<Nest>(data.attributes);
         n.createdAt = new Date(n.createdAt);
         n.updatedAt &&= new Date(n.updatedAt);
-        if (this.client.options.nodes.cache) this.cache.set(n.id, n);
+        if (this.client.options.nests.cache) this.cache.set(n.id, n);
         return n;
     }
 
