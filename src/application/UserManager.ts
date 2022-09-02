@@ -178,7 +178,7 @@ export class UserManager extends BaseManager {
         if (options.sort) payload.sort = options.sort;
 
         const data = await this.client.requests.get(
-            endpoints.servers.main,
+            endpoints.users.main,
             payload as FilterArray<Sort<FetchOptions>>,
             null, this
         );
